@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ekobanque - Banque Privée</title>
+
+    <!-- PWA Meta tags & Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#10b981" />
+
+    <!-- iOS Apple-specific meta tags for Add to Home Screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ekobanque" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    
+    <!-- Microsoft / Windows Tile Color -->
+    <meta name="msapplication-TileColor" content="#091e16" />
+    <meta name="msapplication-TileImage" content="/icon-192.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('[PWA] Service Worker registered successfully:', registration.scope);
+            })
+            .catch((error) => {
+              console.error('[PWA] Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
+

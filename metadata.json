@@ -1,0 +1,6 @@
+{
+  "name": "Banque Premium",
+  "description": "Une application de banque en ligne moderne et haut de gamme, maintenant transformée en Progressive Web App (PWA) installable sous le nom de Ekobanque.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
